@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>RoboSub · Drishya Bashyal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one narrow reading column with a plain top nav, like a classic personal site */
+:root{
+  --bg:#ffffff; --fg:#1d2329; --muted:#5d6872; --line:#e1e5e9; --link:#1b5fa6; --soft:#f4f6f8;
+  --sans:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15191d; --fg:#e4e8ec; --muted:#9aa5ae; --line:#2b3238; --link:#7fb3ec; --soft:#1d2328; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15191d; --fg:#e4e8ec; --muted:#9aa5ae; --line:#2b3238; --link:#7fb3ec; --soft:#1d2328; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:18px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page{max-width:760px;margin:0 auto;padding-block:0 48px}
+a{color:var(--link);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+nav{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 24px;padding-block:22px;border-bottom:1px solid var(--line);margin-bottom:40px}
+nav .name{font-weight:700;font-size:19px;color:var(--fg);text-decoration:none}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 22px}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--fg)}
+nav ul a[aria-current]{color:var(--fg);font-weight:600}
+h1,h2,h3{line-height:1.25;text-wrap:balance;margin:0}
+h1{font-size:36px;font-weight:700}
+h2{font-size:26px;font-weight:700;margin-top:56px;margin-bottom:12px}
+h3{font-size:21px;font-weight:600;margin-top:32px;margin-bottom:6px}
+p{margin:0 0 16px}
+ul.list{margin:0 0 16px;padding-left:1.2em}
+ul.list li{margin-bottom:6px}
+.lede{font-size:21px;color:var(--fg);margin-top:12px}
+.meta{color:var(--muted);font-size:15px;margin:0 0 12px}
+.tools{color:var(--muted);font-size:15px}
+.tools b{color:var(--fg);font-weight:600}
+figure{margin:20px 0 24px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px}
+figcaption{color:var(--muted);font-size:15px;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 24px}
+.two figure{margin:0;min-width:0}
+.two img{aspect-ratio:3/4;object-fit:cover}
+.two.wide img{aspect-ratio:4/3}
+.two.cad img{object-fit:contain;background:#fff}
+img.cad{background:#fff}
+.viewer{position:relative;aspect-ratio:1/1;max-width:100%;max-height:560px;width:100%;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;touch-action:none;cursor:grab}
+.viewer:active{cursor:grabbing}
+.viewer img,.viewer canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border:0;display:block}
+.viewer .hint{position:absolute;left:10px;bottom:8px;font-size:14px;color:#5d6872;background:#ffffffd9;padding:2px 8px;border-radius:3px;pointer-events:none}
+.highlights{margin:24px 0 0;padding:16px 20px;background:var(--soft);border-radius:4px;list-style:none;display:grid;gap:6px}
+.work{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+.work li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px;align-items:start}
+.work img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:4px;display:block}
+.work h3{margin-top:0}
+.work p{margin-bottom:4px}
+hr{border:0;border-top:1px solid var(--line);margin:48px 0 0}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.email{user-select:all}
+@media (max-width:560px){
+  body{font-size:17px}
+  h1{font-size:30px}
+  .work li{grid-template-columns:1fr;gap:10px}
+  .two{grid-template-columns:1fr}
+}
+</style>
+</head><body>
+<div class="page">
+<nav><a class="name" href="index.html">Drishya Bashyal</a><ul><li><a href="index.html">Home</a></li><li><a href="robosub.html" aria-current="page">RoboSub</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li></ul></nav>
+<main>
+
+<h1>USM RoboSub</h1>
+<p class="lede">RoboSub is an international competition where student teams build autonomous underwater vehicles that complete tasks on their own. I'm the hardware lead for our team at USM.</p>
+
+<h2>How it started</h2>
+<p>Before we had an AUV, our team built a SeaPerch, a small ROV with a PVC frame. It taught us the basics of thrusters, buoyancy and keeping electronics dry. After that we decided to build a real autonomous vehicle and take it to RoboSub.</p>
+<div class="two">
+<figure><img src="images/img02.jpg" alt="SeaPerch ROV with PVC frame, green thrusters and foam floats" loading="lazy"><figcaption>Our SeaPerch ROV</figcaption></figure>
+<figure><img src="images/img03.jpg" alt="The SeaPerch ROV being lowered into a pool" loading="lazy"><figcaption>In the pool at our September demo</figcaption></figure>
+</div>
+<ul class="list">
+<li><b>Start:</b> SeaPerch ROV, our first underwater build</li>
+<li><b>July 2026:</b> RoboSub semifinals as the first Mississippi team to compete</li>
+<li><b>Now:</b> MARV 2.0, our vehicle for RoboSub 2027</li>
+</ul>
+
+<h2 id="marv">MARV 2.0</h2>
+<p class="meta">Hardware lead · July 2026 to present</p>
+<figure><img src="images/marv2.jpg" alt="MARV 2.0 frame on the lab floor with aluminum rails, Blue Robotics thrusters at the corners and yellow 3D-printed mounts holding the main hull" loading="lazy"><figcaption>MARV 2.0 in the lab: the 2027 frame with thrusters at the corners and our printed mounts holding the main hull.</figcaption></figure>
+<p>After our first RoboSub in 2026, I started designing the sub for 2027. I modeled the whole vehicle in Fusion 360, 3D printed a 60% scale version, and pitched it to the team as the base for our next build.</p>
+<figure><img src="images/img01.jpg" alt="Audience at a pool-side demonstration of the MARV AUV" loading="lazy"><figcaption>Our September MARV demo, where I presented the next-generation frame designs.</figcaption></figure>
+<p>The parts I'm responsible for:</p>
+<ul class="list">
+<li>The main electronics tray that holds the Jetson, power board, ESCs and ZED camera (I'm designing this now), then the battery tray</li>
+<li>Waterproof pass-throughs and bulkhead penetrators</li>
+<li>A ballast system built around a pressure accumulator, the same kind used under a kitchen sink</li>
+<li>Torpedo dropper and launcher mechanisms</li>
+<li>Battery selection (6S LiPo) and power distribution</li>
+<li>Field testing sonar and camera data collection</li>
+</ul>
+<p>The vehicle we brought to competition in July 2026 ran without sonar or the ZED stereo camera. We started adding both after RoboSub and are testing them now.</p>
+<figure><img src="images/img00.jpg" alt="USM RoboSub team at a lake with the AUV on the bank" loading="lazy"><figcaption>Lake test: pulling sonar and camera data the night before a demo.</figcaption></figure>
+<p>At RoboSub 2026 our team qualified and made it to the semifinals. Blue Robotics also awarded us two T200 thrusters with ESCs.</p>
+<p class="tools"><b>Tools:</b> Fusion 360, 3D printing, Jetson, ZED stereo camera, sonar, Blue Robotics T200 and ESC, ROS 2</p>
+
+<h2 id="clamp">Quick-release hull clamp</h2>
+<p class="meta">AUV · October 2026</p>
+<p>Last season we held the main hull with the same screw-down clamps people use for nitrous bottles in cars. Every time we needed to get inside the sub, someone had to back a long screw out of a nut. Taking the hull out and putting it back took 5 to 10 minutes, and we needed tools every time.</p>
+<div class="two">
+<figure><img src="images/img04.jpg" alt="Yellow 3D-printed clamp that latches around the AUV hull" loading="lazy"><figcaption>The final printed clamp</figcaption></figure>
+<figure><img class="cad" src="images/img05.jpg" alt="Fusion 360 model of the clamp latch" loading="lazy"><figcaption>The latch in Fusion 360</figcaption></figure>
+</div>
+<h3>What didn't work</h3>
+<p>My early prints were either too loose or too tight. I tried making the main clamp piece adjustable forward and back, but that didn't fix the fit.</p>
+<h3>What I changed</h3>
+<p>I made the clamp one solid piece instead of several parts screwed together. It carries real load, and if it failed the whole robot would drop. I made the main body thicker, then went through several latch designs around it until one held.</p>
+<h3>Result</h3>
+<p>The clamp now latches and releases by hand, and it's in use on the AUV. Next I want to replace the latch with a metal one so it doesn't wear down over time.</p>
+<p class="tools"><b>Tools:</b> Fusion 360, FDM printing, designing for load, iterative prototyping</p>
+
+<h2>What didn't work: our own hull</h2>
+<p class="meta">AUV · 2026 season</p>
+<div class="two">
+<figure><img src="images/hull-pvc.jpg" alt="Homemade hull made from gray PVC pipe with 3D-printed yellow and gray end caps" loading="lazy"><figcaption>Our homemade hull: PVC pipe with 3D-printed end caps</figcaption></figure>
+<figure><img src="images/hull-endcap.jpg" alt="End cap of the homemade hull with four waterproof connectors on an aluminum plate" loading="lazy"><figcaption>The end cap, with four waterproof connectors</figcaption></figure>
+</div>
+<p>Before we bought a Blue Robotics enclosure, we tried building our own hull. It worked for a while, but even with every part finished, something was always slightly off and it never became fully reliable. It also wasn't modular, so opening it to work on the electronics was slow and awkward.</p>
+<p>We switched to a Blue Robotics hull, and I presented what we learned from the attempt to the RoboSub judges at competition. The main lesson for me: on a vehicle we open dozens of times a season, being easy to service matters as much as whether it seals.</p>
+
+<h2>Other parts I designed for the AUV</h2>
+
+<h3 id="mounts">Adjustable corner thruster mounts</h3>
+<p class="meta">2026</p>
+<figure><img class="cad" src="images/img06.jpg" alt="Fusion 360 model of the corner thruster mount with a ring that clamps around a frame pole" loading="lazy"></figure>
+<p>These mounts slide up and down the four corner poles of the frame and tighten in place. That lets us move each thruster wherever it works best for balance and control, instead of being stuck with fixed holes.</p>
+<p class="tools"><b>Tools:</b> Fusion 360, 3D printing, frame design</p>
+
+<h3 id="torpedo">Torpedo launcher and dropper</h3>
+<p class="meta">2026</p>
+<div class="two wide cad">
+<figure><img src="images/img09.jpg" alt="Fusion 360 model of the torpedo launcher tube with servo" loading="lazy"><figcaption>Launcher</figcaption></figure>
+<figure><img src="images/img10.jpg" alt="Fusion 360 model of the gear-driven torpedo dropper" loading="lazy"><figcaption>Dropper</figcaption></figure>
+</div>
+<p>I designed and built prototypes of a torpedo dropper and a launcher. The launcher uses a capacitor and a small propeller so the torpedo travels straight for a short distance. Both are still prototypes and we'll change them if we find a better approach. I've handed them to teammates to keep developing while I focus on the hull and trays.</p>
+<p class="tools"><b>Tools:</b> Fusion 360, capacitor launch, prototyping</p>
+
+<h3 id="pcb">Power distribution board (planned)</h3>
+<p class="meta">Research stage</p>
+<p>This comes after the electronics and battery trays. I'm researching the design now before starting the layout in KiCad. The plan:</p>
+<ul class="list">
+<li>Battery power comes in on an XT60 connector, through a fuse and a MOSFET for reverse-polarity protection</li>
+<li>From there it goes to two regulator modules that mount on the board</li>
+<li>The competition magnetic kill switch cuts power to the ESCs and thrusters only, so the Jetson and sensors stay on</li>
+<li>A boot-button connector goes to the Jetson</li>
+</ul>
+<p class="tools"><b>Tools:</b> KiCad, XT60, reverse-polarity protection, kill switch</p>
+
+<h2>Leading the hardware team</h2>
+<p>I lead about 10 people on hardware. I take on the core vehicle work myself, since I went through every problem we hit at last year's competition and can design around them. Teammates own other systems, like the torpedo launcher and dropper, and I keep everyone updated on the hull and tray designs so they understand how they work.</p>
+<p>A lot of our members are new to hardware and want to help, so a big part of my job is teaching the basics as we build. The goal is for the whole team to get better, not just the vehicle.</p>
+<div class="two">
+<figure><img src="images/img14.jpg" alt="Local law enforcement and students gathered around the ROV and printed frame models at the demo table" loading="lazy"><figcaption>Our September demo with local agencies, next to our printed frame models</figcaption></figure>
+<figure><img src="images/img15.jpg" alt="Crowd watching the ROV in the pool" loading="lazy"><figcaption>Running the ROV in the pool during the demo</figcaption></figure>
+</div>
+<h3>Events and outreach</h3>
+<ul class="list">
+<li>RoboSub 2026, where I presented our custom hull work to the judges</li>
+<li>Our September MARV demo for local law enforcement, first responders and K–12 students</li>
+<li>Demos at the Infinity Science Center to get high school students interested in robotics</li>
+<li>Gulf Blue events, including a conversation with Near Space Labs about turning aerial imagery into high-resolution maps</li>
+<li>Demos of our vision work and the story of our first competition</li>
+</ul>
+
+</main>
+<footer><span>Drishya Bashyal · Hattiesburg, Mississippi</span><span class="email">drishya.bashyal@usm.edu</span></footer>
+</div>
+</body></html>

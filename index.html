@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Drishya Bashyal</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one narrow reading column with a plain top nav, like a classic personal site */
+:root{
+  --bg:#ffffff; --fg:#1d2329; --muted:#5d6872; --line:#e1e5e9; --link:#1b5fa6; --soft:#f4f6f8;
+  --sans:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15191d; --fg:#e4e8ec; --muted:#9aa5ae; --line:#2b3238; --link:#7fb3ec; --soft:#1d2328; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#15191d; --fg:#e4e8ec; --muted:#9aa5ae; --line:#2b3238; --link:#7fb3ec; --soft:#1d2328; color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:18px;line-height:1.65;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.page{max-width:760px;margin:0 auto;padding-block:0 48px}
+a{color:var(--link);text-underline-offset:2px}
+a:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+nav{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px 24px;padding-block:22px;border-bottom:1px solid var(--line);margin-bottom:40px}
+nav .name{font-weight:700;font-size:19px;color:var(--fg);text-decoration:none}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 22px}
+nav ul a{color:var(--muted);text-decoration:none}
+nav ul a:hover{color:var(--fg)}
+nav ul a[aria-current]{color:var(--fg);font-weight:600}
+h1,h2,h3{line-height:1.25;text-wrap:balance;margin:0}
+h1{font-size:36px;font-weight:700}
+h2{font-size:26px;font-weight:700;margin-top:56px;margin-bottom:12px}
+h3{font-size:21px;font-weight:600;margin-top:32px;margin-bottom:6px}
+p{margin:0 0 16px}
+ul.list{margin:0 0 16px;padding-left:1.2em}
+ul.list li{margin-bottom:6px}
+.lede{font-size:21px;color:var(--fg);margin-top:12px}
+.meta{color:var(--muted);font-size:15px;margin:0 0 12px}
+.tools{color:var(--muted);font-size:15px}
+.tools b{color:var(--fg);font-weight:600}
+figure{margin:20px 0 24px}
+figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px}
+figcaption{color:var(--muted);font-size:15px;margin-top:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0 24px}
+.two figure{margin:0;min-width:0}
+.two img{aspect-ratio:3/4;object-fit:cover}
+.two.wide img{aspect-ratio:4/3}
+.two.cad img{object-fit:contain;background:#fff}
+img.cad{background:#fff}
+.viewer{position:relative;aspect-ratio:1/1;max-width:100%;max-height:560px;width:100%;background:#fff;border:1px solid var(--line);border-radius:4px;overflow:hidden;touch-action:none;cursor:grab}
+.viewer:active{cursor:grabbing}
+.viewer img,.viewer canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;border:0;display:block}
+.viewer .hint{position:absolute;left:10px;bottom:8px;font-size:14px;color:#5d6872;background:#ffffffd9;padding:2px 8px;border-radius:3px;pointer-events:none}
+.highlights{margin:24px 0 0;padding:16px 20px;background:var(--soft);border-radius:4px;list-style:none;display:grid;gap:6px}
+.work{list-style:none;margin:0;padding:0;display:grid;gap:28px}
+.work li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px;align-items:start}
+.work img{width:100%;aspect-ratio:4/3;object-fit:cover;border:1px solid var(--line);border-radius:4px;display:block}
+.work h3{margin-top:0}
+.work p{margin-bottom:4px}
+hr{border:0;border-top:1px solid var(--line);margin:48px 0 0}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:15px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.email{user-select:all}
+@media (max-width:560px){
+  body{font-size:17px}
+  h1{font-size:30px}
+  .work li{grid-template-columns:1fr;gap:10px}
+  .two{grid-template-columns:1fr}
+}
+</style>
+</head><body>
+<div class="page">
+<nav><a class="name" href="index.html">Drishya Bashyal</a><ul><li><a href="index.html" aria-current="page">Home</a></li><li><a href="robosub.html">RoboSub</a></li><li><a href="projects.html">Projects</a></li><li><a href="about.html">About</a></li></ul></nav>
+<main>
+
+<h1>Hi, I'm Drishya.</h1>
+<p class="lede">I'm a computer science senior at the University of Southern Mississippi, and I spend most of my time building hardware for underwater robots.</p>
+<p>I lead hardware for the USM RoboSub team and work as an undergraduate research assistant in the USM Robotics Lab. My work is mostly the physical side of a robot: designing parts in Fusion 360, 3D printing and testing them, planning power and wiring, and figuring out how to keep electronics dry. I graduate in May 2027 and I'm looking for a full-time hardware role starting June 2027.</p>
+<figure><img src="images/img00.jpg" alt="USM RoboSub team at a lake with the AUV on the bank, collecting sonar and camera data" loading="lazy"><figcaption>Lake testing with the RoboSub team, collecting sonar and camera data the night before a demo.</figcaption></figure>
+<ul class="highlights">
+<li>Reached the semifinals at RoboSub 2026, our team's first year competing</li>
+<li>We were the first team from Mississippi to compete at RoboSub</li>
+<li>Our team was awarded two Blue Robotics T200 thrusters with ESCs in 2026</li>
+<li>Two years in the USM Robotics Lab</li>
+<li>President's List the last two semesters</li>
+</ul>
+
+<h2>Selected work</h2>
+<ul class="work">
+<li><a href="robosub.html#marv"><img src="images/marv2.jpg" alt="MARV 2.0 frame with thrusters and printed hull mounts"></a>
+<div><h3><a href="robosub.html#marv">MARV 2.0 underwater vehicle</a></h3><p>The 2027 RoboSub vehicle I'm designing, from the full CAD model to the electronics tray and ballast system.</p></div></li>
+<li><a href="robosub.html#clamp"><img src="images/img04.jpg" alt="Yellow 3D-printed clamp that latches around the AUV hull"></a>
+<div><h3><a href="robosub.html#clamp">Quick-release hull clamp</a></h3><p>A printed clamp that took hull access from 5 to 10 minutes down to a few seconds.</p></div></li>
+<li><a href="projects.html#balancing"><img class="cad" src="images/robot3d.jpg" alt="3D model of the two-wheel balancing robot"></a>
+<div><h3><a href="projects.html#balancing">Self-balancing robot</a></h3><p>A personal project: a two-wheeled robot with jointed legs, run by an ESP32 and a Raspberry Pi 5.</p></div></li>
+<li><a href="projects.html#fpv"><img src="images/img12.jpg" alt="Finished 5-inch freestyle FPV quad"></a>
+<div><h3><a href="projects.html#fpv">FPV drones</a></h3><p>Three drones built from scratch over the summer, including reviving an old one with a modern receiver.</p></div></li>
+</ul>
+<p style="margin-top:28px"><a href="projects.html">See all projects →</a></p>
+
+<h2>Get in touch</h2>
+<p>The best way to reach me is email at <span class="email">drishya.bashyal@usm.edu</span>. I'm also on <a href="https://www.linkedin.com/in/drishyabashyal/" target="_blank" rel="noopener">LinkedIn</a>.</p>
+
+</main>
+<footer><span>Drishya Bashyal · Hattiesburg, Mississippi</span><span class="email">drishya.bashyal@usm.edu</span></footer>
+</div>
+</body></html>
